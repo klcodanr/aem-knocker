@@ -1,0 +1,20 @@
+name: Knock
+on:
+  # Triggers the workflow on a schedule
+  schedule:
+    - cron: '0 */12 * * *'
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  knock:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Knock
+        run: |
+          curl -u${AEM_USER}:${AEM_PASSWORD} https://${AEM_HOST}/aem/start.html -o /dev/null -w '%{http_code}\n' -s
+        env:
+          AEM_HOST: ${{ secrets.AEM_HOST }}
+          AEM_PASSWORD: ${{ secrets.AEM_PASSWORD }}
+          AEM_USER: ${{ secrets.AEM_USER }}
