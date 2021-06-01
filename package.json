@@ -1,0 +1,23 @@
+{
+  "name": "aem-knocker",
+  "version": "1.0.0",
+  "description": "Ensures AEM instances running in Adobe Cloud Manager are kept running.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klcodanr/aem-knocker.git"
+  },
+  "author": "Dan Klco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/klcodanr/aem-knocker/issues"
+  },
+  "homepage": "https://github.com/klcodanr/aem-knocker#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "puppeteer": "^10.0.0"
+  }
+}
