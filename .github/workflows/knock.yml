@@ -11,9 +11,13 @@ jobs:
   knock:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Node
+        uses: actions/setup-node@v1
+      - name: Install Node Dependencies
+        run: npm install
       - name: Knock
         run: |
-          curl -u${AEM_USER}:${AEM_PASSWORD} https://${AEM_HOST}/aem/start.html -o /dev/null -w '%{http_code}\n' -s
+          node .
         env:
           AEM_HOST: ${{ secrets.AEM_HOST }}
           AEM_PASSWORD: ${{ secrets.AEM_PASSWORD }}
